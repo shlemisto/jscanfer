@@ -9,7 +9,7 @@ An example of how it may be used:
       char *service;
       uds_node_id_t node_id;
       unsigned int state;
-      unsigned int type;
+      uds_xxx_type_t type;
       cJSON *node_info;
   } xxx_req_t;
 
@@ -20,7 +20,7 @@ An example of how it may be used:
   ...
 
    if (json_parse(p->params_obj, "destination", &req->service) ||
-       json_parse(p->params_obj, "node_id", &req->node_id_str) ||
+       json_parse(p->params_obj, "node_id", &req->node_id) ||
        json_parse(p->params_obj, "state", &req->state) ||
        json_parse(p->params_obj, "type", &req->type) ||
        json_parse_with_default(p->params_obj, "node_info", &req->node_info, cJSON_CreateObject()))
